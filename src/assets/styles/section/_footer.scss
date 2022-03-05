@@ -1,0 +1,113 @@
+.footer {
+    padding: 100px 0 150px;
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+
+        @include a (tablet-xl) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        @include a (tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-item {
+        &-1 {
+            @include a (tablet-xl) {
+                order: -2;
+            }
+        }
+        &-4 {
+            @include a (tablet-xl) {
+                order: -2;
+            }
+        }
+    }
+
+    &__logo {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 65px;
+            background: url(/src/assets/images/footer-logo-bg.png);
+            left: -20px;
+            top: -35px;
+            z-index: -1;
+        }
+    }
+
+    &__descr {
+        font-size: toRem(18);
+        line-height: 150%;
+        color: rgba($color: $main-color, $alpha: 0.7);
+        max-width: 366px;
+        width: 100%;
+
+        @include a (tablet-xl) {
+            max-width: 225px;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-size: toRem(20);
+        font-weight: 500;
+        margin-bottom: 30px;
+
+        @include a (tablet-xl) {
+            text-align: center;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include a (tablet-xl) {
+            align-items: center;
+        }
+    }
+
+    &__item {
+        &-link {
+            font-weight: 500;
+            color: rgba($color: $main-color, $alpha: 0.7);
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+
+    &__mail {
+        color: rgba($color: $main-color, $alpha: 0.7);
+        letter-spacing: 0.06em;
+        margin-bottom: 15px;
+
+        @include a (tablet-xl) {
+            display: block;
+            text-align: center;
+        }
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+}

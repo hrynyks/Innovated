@@ -1,0 +1,94 @@
+.header {
+    // position: absolute;
+    // width: 100%;
+    // top: 35px;
+    // z-index: 1;
+    padding: 35px 0;
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include a (tablet) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        gap: 120px;
+
+        @include a (tablet-xl) {
+            gap: 75px;
+        }
+
+        @include a (tablet) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        display: block;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: url(/src/assets/images/header-logo-bg.png);
+            top: -40px;
+            left: -35px;
+            z-index: -1;
+        }
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__item {
+        &-link {
+            color: rgba($color: $main-color, $alpha: 0.7);
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 74px;
+                height: 2px;
+                background-color: $accent-color;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+            }
+
+            &:hover {
+                color: $accent-color;
+            }
+
+            &:hover .header__item-link::before {
+                display: block;
+            }
+        }
+    }
+
+    &__btn {
+        font-size: toRem(18);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: $light-color;
+        width: 166px;
+        line-height: 57px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $accent-color;
+    }
+}

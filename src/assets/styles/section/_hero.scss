@@ -1,0 +1,181 @@
+.hero {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+    padding-top: 35px;
+
+    @include a (mobile) {
+        padding-bottom: 50px;
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__content {
+        @include a (tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+    }
+
+    &__span {
+        font-size: toRem(18);
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: rgba($color: $accent-color, $alpha: 0.7);
+        display: block;
+        margin-bottom: 15px;
+
+        @include a (tablet) {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        font-family: 'Gelasio', serif;
+        font-size: toRem(57);
+        font-weight: 600;
+        line-height: 120%;
+        color: $main-color;
+        max-width: 760px;
+        width: 100%;
+        margin-bottom: 40px;
+
+        @include a (tablet) {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        &-span {
+            color: $accent-color;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 70px;
+
+        @include a (mobile) {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    &__btn {
+
+        &-left {
+            font-size: toRem(18);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: $light-color;
+            width: 166px;
+            line-height: 57px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: $accent-color;
+        }
+
+        &-right {
+            font-size: toRem(18);
+            letter-spacing: 0.02em;
+            color: rgba($color: $main-color, $alpha: 0.7);
+            padding-left: 60px;
+            position: relative;
+
+            &:hover {
+                color: $accent-color;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 14px;
+                height: 16px;
+                background: url(/src/assets/images/hero-arrow.png);
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                border: 1px solid rgba(45, 116, 255, 0.4);
+                border-radius: 50%;
+                left: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    &__image {
+        position: relative;
+
+        @include a (tablet) {
+            display: none;
+        }
+
+        &-1 {
+            position: absolute;
+            bottom: 100px;
+            left: 25px;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.02);
+            background-color: $light-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            @include a (tablet-xl) {
+                display: none;
+            }
+        }
+
+        &-2 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.02);
+            background-color: $light-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            @include a (tablet-xl) {
+                display: none;
+            }
+        }
+
+        &-3 {
+            position: absolute;
+            top: 125px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.02);
+            background-color: $light-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            @include a (tablet-xl) {
+                display: none;
+            }
+        }
+    }
+}

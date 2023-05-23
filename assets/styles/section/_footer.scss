@@ -1,0 +1,131 @@
+.footer {
+    padding: 100px 0;
+
+    @include a (tablet) {
+        padding: 75px 0;
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+
+        @include a (tablet-xl) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        @include a (tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-item {
+        &-1 {
+            @include a (tablet-xl) {
+                order: -2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        &-4 {
+            @include a (tablet-xl) {
+                order: -2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @include a (tablet) {
+                order: 0;
+            }
+        }
+    }
+
+    &__logo {
+        margin-bottom: 30px;
+
+        &-img {
+            height: 60px;
+        }
+    }
+
+    &__descr {
+        font-size: 18px;
+        line-height: 150%;
+        color: rgba($color: $main-color, $alpha: 0.7);
+        max-width: 366px;
+        width: 100%;
+
+        @include a (tablet-xl) {
+            max-width: 225px;
+            text-align: center;
+            font-size: 14px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 30px;
+
+        @include a (tablet-xl) {
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include a (tablet-xl) {
+            align-items: center;
+        }
+    }
+
+    &__item {
+        &-link {
+            font-weight: 500;
+            color: rgba($color: $main-color, $alpha: 0.7);
+            border-bottom: 1px solid transparent;
+
+            @include a (tablet) {
+                font-size: 14px;
+            }
+
+            &:hover {
+                color: $accent-color;
+                transition: .7s all ease-in-out;
+                border-bottom-color: $accent-color;;
+            }
+        }
+    }
+
+    &__mail {
+        color: rgba($color: $main-color, $alpha: 0.7);
+        letter-spacing: 0.06em;
+        border-bottom: 1px solid transparent;
+        margin-bottom: 15px;
+
+        @include a (tablet-xl) {
+            display: block;
+            text-align: center;
+        }
+
+        &:hover {
+            color: $accent-color;
+            transition: .7s all ease-in-out;
+            border-bottom-color: $accent-color;;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+}

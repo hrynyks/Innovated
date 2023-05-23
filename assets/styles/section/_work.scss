@@ -1,0 +1,85 @@
+.work {
+    padding-bottom: 100px;
+
+    @include a (tablet) {
+        padding-bottom: 75px;
+    }
+
+    @include a (tablet) {
+        padding-bottom: 75px;
+    }
+
+    &__title {
+        font-family: 'Gelasio', serif;
+        font-size: 32px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 60px;
+
+        @include a (tablet-xl) {
+            font-size: 26px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include a (tablet) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        max-width: 360px;
+        width: 100%;
+        background-color: rgba($color: $light-color, $alpha: 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 23px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-image {
+            width: 100px;
+            height: 100px;
+            background-color: #F8F8F8;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+
+            @include a (tablet-xl) {
+                width: 75px;
+                height: 75px;
+            }
+        }
+
+        &-title {
+            font-family: 'Gelasio', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: rgba($color: $main-color, $alpha: 0.7);
+            margin-bottom: 15px;
+
+            @include a (tablet-xl) {
+                font-size: 20px;
+            }
+        }
+
+        &-descr {
+            font-size: 18px;
+            line-height: 150%;
+            text-align: center;
+            color: rgba($color: $main-color, $alpha: 0.7);
+
+            @include a (tablet-xl) {
+                font-size: 14px;
+            }
+        }
+    }
+}

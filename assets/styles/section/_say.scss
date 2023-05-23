@@ -1,0 +1,187 @@
+.say {
+    padding-bottom: 100px;
+
+    @include a (tablet) {
+        padding-bottom: 75px;
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+
+        @include a (tablet) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &__title {
+        font-family: 'Gelasio', serif;
+        font-size: 32px;
+        font-weight: 500;
+        padding-left: 82px;
+        position: relative;
+
+        @include a (tablet-xl) {
+            font-size: 24px;
+        }
+
+        @include a (mobile) {
+            padding-left: 0;
+            text-align: center;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 68px;
+            height: 2px;
+            background-color: rgba($color: $accent-color, $alpha: 0.5);
+            box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.03);
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include a (mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__btn {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $light-color;
+
+        @include a (mobile) {
+            scale: (0.7);
+        }
+
+        &:hover {
+            background-color: rgba($color: #F4F4F4, $alpha: 0.5);
+
+            box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.03);
+        }
+
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include a (tablet-xl) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        max-width: 555px;
+        width: 100%;
+        background-color: $light-color;
+        box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.03);
+        border-radius: 10px;
+        padding: 85px 82px 63px;
+
+        @include a (mobile) {
+            padding: 40px;
+        }
+
+        &-descr {
+            font-size: 18px;
+            line-height: 150%;
+            color: rgba($color: $main-color, $alpha: 0.8);
+            margin-bottom: 44px;
+            position: relative;
+
+            @include a (tablet-xl) {
+                font-size: 14px;
+            }
+
+            @include a (mobile) {
+                font-size: 10px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                background: url(../../assets/images/say-quotes.svg);
+                width: 24px;
+                height: 20px;
+                top: -30px;
+
+                @include a (mobile) {
+                    scale: (0.8);
+                }
+            }
+        }
+
+        &-name {
+            font-size: 24px;
+
+            @include a (tablet-xl) {
+                font-size: 18px;
+            }
+
+            @include a (mobile) {
+                font-size: 12px;
+            }
+        }
+
+        &-proff {
+            font-size: 18px;
+
+            @include a (tablet-xl) {
+                font-size: 14px;
+            }
+
+            @include a (mobile) {
+                font-size: 10px;
+            }
+        }
+
+        &-wrap {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        &__person {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &__img {
+            @include a (mobile) {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+
+    }
+
+    &__swiper {
+        @include a (laptop) {
+            max-width: 1140px;
+        }
+
+        @include a (tablet-xl) {
+            max-width: 555px;
+        }
+    }
+}

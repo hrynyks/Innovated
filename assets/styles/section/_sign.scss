@@ -1,0 +1,119 @@
+.sign {
+    padding-bottom: 100px;
+
+    @include a (tablet) {
+        padding-bottom: 75px;
+    }
+
+    &-wrap {
+        max-width: 1140px;
+        width: 100%;
+        box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.03);
+        border-radius: 10px;
+        border-color: $light-color;
+        padding: 75px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: 'Gelasio', serif;
+        font-size: 32px;
+        font-weight: 500;
+        margin-bottom: 20px;
+
+        @include a (tablet-xl) {
+            font-size: 24px;
+        }
+
+        @include a (mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__descr {
+        font-size: 18px;
+        line-height: 150%;
+        color: rgba($color: $main-color, $alpha: 0.7);
+        text-align: center;
+        max-width: 626px;
+        width: 100%;
+        margin-bottom: 40px;
+
+        @include a (tablet-xl) {
+            font-size: 14px;
+            max-width: 450px;
+        }
+
+        @include a (mobile) {
+            font-size: 10px;
+            max-width: 350px;
+        }
+    }
+
+    &__form {
+        max-width: 528px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 54px;
+
+        @include a (tablet-xl) {
+            height: 45px;
+        }
+
+        @include a (mobile) {
+            height: 35px;
+        }
+
+    }
+
+    &__input {
+        max-width: 403px;
+        width: 100%;
+        padding: 15px 30px;
+
+        &::placeholder {
+            color: rgba($color: $main-color, $alpha: 0.5);
+            font-size: 16px;
+
+            @include a (tablet-xl) {
+                font-size: 14px;
+            }
+
+            @include a (mobile) {
+                font-size: 10px;
+            }
+        }
+
+        &:focus {
+            color: $accent-color;
+        }
+    }
+
+    &__btn {
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: $light-color;
+        background-color: $accent-color;
+        width: 123px;
+        border-radius: 5px;
+
+        @include a (tablet-xl) {
+            font-size: 14px;
+            width: 100px;
+        }
+
+        @include a (mobile) {
+            font-size: 10px;
+        }
+
+        &:hover {
+            color: $main-color;
+            background-color: transparent;
+            transition: .7s all ease-in-out;
+        }
+    }
+}
